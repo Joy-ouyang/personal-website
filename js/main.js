@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   initMobileNav();
   initActiveNav();
-  initContactForm();
 });
 
 /* --- Mobile Navigation Toggle --- */
@@ -75,108 +74,5 @@ function initActiveNav() {
   });
 }
 
-/* --- Contact Form Validation --- */
-function initContactForm() {
-  var form = document.getElementById('contactForm');
-  if (!form) return;
-
-  var nameInput = document.getElementById('name');
-  var emailInput = document.getElementById('email');
-  var subjectInput = document.getElementById('subject');
-  var messageInput = document.getElementById('message');
-  var successMessage = document.getElementById('formSuccess');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var isValid = true;
-
-    // Validate name
-    if (!nameInput.value.trim()) {
-      showError(nameInput, '请输入您的姓名');
-      isValid = false;
-    } else {
-      clearError(nameInput);
-    }
-
-    // Validate email
-    if (!emailInput.value.trim()) {
-      showError(emailInput, '请输入邮箱地址');
-      isValid = false;
-    } else if (!isValidEmail(emailInput.value.trim())) {
-      showError(emailInput, '请输入有效的邮箱地址');
-      isValid = false;
-    } else {
-      clearError(emailInput);
-    }
-
-    // Validate subject
-    if (!subjectInput.value.trim()) {
-      showError(subjectInput, '请输入主题');
-      isValid = false;
-    } else {
-      clearError(subjectInput);
-    }
-
-    // Validate message
-    if (!messageInput.value.trim()) {
-      showError(messageInput, '请输入您的消息');
-      isValid = false;
-    } else if (messageInput.value.trim().length < 10) {
-      showError(messageInput, '消息内容至少10个字符');
-      isValid = false;
-    } else {
-      clearError(messageInput);
-    }
-
-    // If valid, submit via mailto
-    if (isValid) {
-      var name = encodeURIComponent(nameInput.value.trim());
-      var email = encodeURIComponent(emailInput.value.trim());
-      var subject = encodeURIComponent(subjectInput.value.trim());
-      var message = encodeURIComponent(messageInput.value.trim());
-
-      var mailtoLink = 'mailto:2510278008@qq.com?subject=' + subject +
-        '&body=姓名: ' + name + '%0A邮箱: ' + email + '%0A消息: ' + message;
-
-      window.location.href = mailtoLink;
-
-      form.reset();
-      form.style.display = 'none';
-      successMessage.classList.add('visible');
-    }
-  });
-
-  // Real-time validation on input
-  [nameInput, emailInput, subjectInput, messageInput].forEach(function (input) {
-    if (!input) return;
-    input.addEventListener('input', function () {
-      if (this.classList.contains('error') && this.value.trim()) {
-        clearError(this);
-      }
-    });
-  });
-}
-
-/* --- Helper Functions --- */
-function showError(input, message) {
-  input.classList.add('error');
-  var errorEl = input.parentElement.querySelector('.form-error');
-  if (errorEl) {
-    errorEl.textContent = message;
-    errorEl.classList.add('visible');
-  }
-}
-
-function clearError(input) {
-  input.classList.remove('error');
-  var errorEl = input.parentElement.querySelector('.form-error');
-  if (errorEl) {
-    errorEl.classList.remove('visible');
-  }
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
 
 
