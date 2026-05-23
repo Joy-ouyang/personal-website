@@ -610,9 +610,9 @@ ul {
 
 /* --- Contact Page --- */
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-info h3 {
@@ -631,12 +631,13 @@ ul {
 .contact-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
 }
 
