@@ -128,38 +128,21 @@ function initContactForm() {
       clearError(messageInput);
     }
 
-    // If valid, submit
+    // If valid, submit via mailto
     if (isValid) {
-      // Show loading state
-      var submitBtn = form.querySelector('.form-submit');
-      var originalText = submitBtn.textContent;
-      submitBtn.textContent = '发送中...';
-      submitBtn.disabled = true;
+      var name = encodeURIComponent(nameInput.value.trim());
+      var email = encodeURIComponent(emailInput.value.trim());
+      var subject = encodeURIComponent(subjectInput.value.trim());
+      var message = encodeURIComponent(messageInput.value.trim());
 
-      // Netlify form submission
-      var formData = new FormData(form);
+      var mailtoLink = 'mailto:2510278008@qq.com?subject=' + subject +
+        '&body=姓名: ' + name + '%0A邮箱: ' + email + '%0A消息: ' + message;
 
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Accept': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(function (response) {
-        if (response.ok) {
-          form.reset();
-          form.style.display = 'none';
-          successMessage.classList.add('visible');
-        } else {
-          alert('发送失败，请稍后再试。');
-        }
-      })
-      .catch(function () {
-        alert('网络错误，请稍后再试。');
-      })
-      .finally(function () {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      });
+      window.location.href = mailtoLink;
+
+      form.reset();
+      form.style.display = 'none';
+      successMessage.classList.add('visible');
     }
   });
 
