@@ -1105,6 +1105,12 @@ ul {
   color: var(--text-body);
 }
 
+.modal-section-text a {
+  color: var(--primary);
+  text-decoration: underline;
+  word-break: break-all;
+}
+
 .modal-image-wrap {
   display: none;
   margin-bottom: 28px;

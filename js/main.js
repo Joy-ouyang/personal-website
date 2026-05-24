@@ -83,7 +83,7 @@ function initProjectModal() {
       title: 'AI 赋能课程开发',
       background: '海外工厂建设在即，如何快速培育本地人才助力工厂运营？成了亟需解决的问题，为此在敲定关键岗位核心能力要求后，需快速开发大量课程用于沟通系统化学习地图，助力本地人才培养，传统人工开发模式耗时长、成本高，难以满足业务急切需求，因而探索利用AI技术提升课程开发效率的可行路径。',
       task: '应用大语言AI模型自动生成课程大纲，加速内容写作；批量运用AI翻译和AI语音合成，完成英文课程制作。通过组合多种AI能力，以最低成本和最快速度实现规模化课程产出。',
-      effect: '成功实现400余门课程的快速开发与制作，累计节约人力工时及视频制作费用约200W+，大幅提升了交付效率-个人关于AI应用的思考-知乎：https://zhuanlan.zhihu.com/p/2041869543098902220',
+      effect: '成功实现400余门课程的快速开发与制作，累计节约人力工时及视频制作费用约200W+，大幅提升了交付效率。<br><br>个人关于AI应用的思考：<a href="https://zhuanlan.zhihu.com/p/2041869543098902220" target="_blank" rel="noopener">知乎文章链接</a>',
       tags: ['AI大语言模型', 'AI语音生成', 'Prompt提示技术', '赋能业务部门运用AI技术']
     },
     {
@@ -101,7 +101,7 @@ function initProjectModal() {
       title: '印尼培训体系从0到1搭建',
       background: '印尼工厂投产在即，本地员工入职后的培养体系尚未形成，急需建立完整的本地培训体系以保障工厂运营。',
       task: '负责印尼工厂首批赴中国种子选手的培养，推动印尼在线学习平台的建设与上线。主导入职培训、上岗培养等基础课程/资料/标准体系在印尼的本地化，并培养本地培训专员。',
-      effect: '成功搭建印尼本地培训体系，并培养印尼本地培训专员，为印尼工厂运营提供了强有力的人才支持和培保障。',
+      effect: '成功搭建印尼本地培训体系，并培养印尼本地培训专员，为印尼工厂运营提供了强有力的人才支持和培训保障。',
       tags: ['海外培训体系搭建', '技能人才培养本地化', '在线学习平台建设及学习地图搭建', '赋能本地专员']
     },
     {
@@ -136,7 +136,7 @@ function initProjectModal() {
     modalTitle.textContent = data.title;
     modalBackground.textContent = data.background;
     modalTask.textContent = data.task;
-    modalEffect.textContent = data.effect;
+    modalEffect.innerHTML = data.effect;
 
     // 案例图片
     if (data.image) {
