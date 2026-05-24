@@ -81,25 +81,35 @@ function initProjectModal() {
     {
       icon: '🧬',
       title: 'AI 赋能课程开发',
-      description: '一个关于应用大语言AI模型去生成大纲，加速内容写作速度，并批量运用AI翻译/配音的项目。通过组合不同常见的功能，以较低的成本/较快的速度实现了400余门课程的开发与制作。最终人力工时节约+视频制作费用，实现约200W+经费节省。',
+      background: '海外工厂建设在即，如何快速培育本地人才助力工厂运营？成了亟需解决的问题，为此在敲定关键岗位核心能力要求后，需快速开发大量课程用于沟通系统化学习地图，助力本地人才培养，传统人工开发模式耗时长、成本高，难以满足业务急切需求，因而探索利用AI技术提升课程开发效率的可行路径。',
+      task: '应用大语言AI模型自动生成课程大纲，加速内容写作；批量运用AI翻译和AI语音合成，完成英文课程制作。通过组合多种AI能力，以最低成本和最快速度实现规模化课程产出。',
+      effect: '成功实现400余门课程的快速开发与制作，累计节约人力工时及视频制作费用约200W+，大幅提升了交付效率-个人关于AI应用的思考-知乎：https://zhuanlan.zhihu.com/p/2041869543098902220',
       tags: ['AI大语言模型', 'AI语音生成', 'Prompt提示技术', '赋能业务部门运用AI技术']
     },
     {
       icon: '📊',
       title: '人力实时Dashboard',
-      description: '自学Fine BI，通过捞取人力数据库的实时数据借助BI独立开发可视化仪表盘。同时，看板支持多种数据源接入和自定义图表配置，具备可持续的开发延展性。现看板已正式上线，有效帮助领导/相关职能同时快速洞察人力变化趋势及异常情况，做出应对响应。',
-      tags: ['Fine BI', '可视化仪表盘', '人力观测指标构建', '自主学习运用新工具']
+      background: '当前人力数据及指标分散在多个系统中，管理层无法实时掌握人力变化趋势，决策依赖人工汇总报表，效率低且易滞后。',
+      task: '自学Fine BI工具，从数据库实时捞取分布于不同系统的多维度人力数据，独立设计并开发可视化仪表盘。支持多数据源接入和自定义图表配置，确保看板具备良好的扩展性。',
+      effect: 'Dashboard已正式上线，帮助管理层及相关职能快速洞察人力变化趋势及异常情况，及时做出应对响应，显著提升了人力数据驱动的决策效率。',
+      tags: ['Fine BI', '可视化仪表盘', '人力观测指标构建', '自主学习运用新工具'],
+      image: 'dashboard-case.jpg',
+      imageCaption: 'Dashboard 效果参考，源自其他个人练习项目'
     },
     {
       icon: '🏗️',
       title: '印尼培训体系从0到1搭建',
-      description: '负责印尼工厂首批赴中国种子选手培养，及印尼培训本地化建设。推动印尼在线学习平台建设上线，并与本地HR配合优化在线平台。同时主导入职培训、上岗培养等基础的员工培养课程/资料/标准体系在印尼的本地化，并成功培养印尼本地培训专员1位，为印尼工厂的运营提供了强有力的支持。',
+      background: '印尼工厂投产在即，本地员工入职后的培养体系尚未形成，急需建立完整的本地培训体系以保障工厂运营。',
+      task: '负责印尼工厂首批赴中国种子选手的培养，推动印尼在线学习平台的建设与上线。主导入职培训、上岗培养等基础课程/资料/标准体系在印尼的本地化，并培养本地培训专员。',
+      effect: '成功搭建印尼本地培训体系，并培养印尼本地培训专员，为印尼工厂运营提供了强有力的人才支持和培保障。',
       tags: ['海外培训体系搭建', '技能人才培养本地化', '在线学习平台建设及学习地图搭建', '赋能本地专员']
     },
     {
       icon: '🤖',
       title: '北美出海人员合规管理标准制定',
-      description: '基于北美项目进展动态测算人力需求，助力工程师及专业技术人员出海前往项目支持。负责项目人员招募/签证办理/入境/在美合规/离境等全流程管理工作，并制定标准管理推行实施。通过宜搭低代码开发工具，联通Fine BI搭建看板，系统性监测出入境人员动向及滞留风险，保障了500余伙伴的顺利出海。',
+      background: '北美项目进展需要大量工程师及专业技术人员出海支持，人员出入境涉及签证、合规等多环节，管理复杂度高、风险大。',
+      task: '基于项目进展动态测算人力需求，统筹人员招募/签证办理/入境/在美合规/离境全流程管理。并利用宜搭低代码工具搭建填报入口。并结合Fine BI搭建捞取填报数据建立看板，系统性监测人员动向及滞留风险。',
+      effect: '制定并推行了标准管理流程，保障了500余位伙伴顺利出海，有效控制了合规风险，提升了人员出入境管理效率。',
       tags: ['人员出入境管理', '签证管理', '合规管理', '数智化工具运用']
     }
   ];
@@ -110,8 +120,13 @@ function initProjectModal() {
   var closeBtn = document.getElementById('modalClose');
   var modalIcon = document.getElementById('modalIcon');
   var modalTitle = document.getElementById('modalTitle');
-  var modalDescription = document.getElementById('modalDescription');
+  var modalBackground = document.getElementById('modalBackground');
+  var modalTask = document.getElementById('modalTask');
+  var modalEffect = document.getElementById('modalEffect');
   var modalTech = document.getElementById('modalTech');
+  var modalImageWrap = document.getElementById('modalImageWrap');
+  var modalImage = document.getElementById('modalImage');
+  var modalImageCaption = document.getElementById('modalImageCaption');
 
   function openModal(index) {
     var data = projectData[index];
@@ -119,7 +134,18 @@ function initProjectModal() {
 
     modalIcon.textContent = data.icon;
     modalTitle.textContent = data.title;
-    modalDescription.textContent = data.description;
+    modalBackground.textContent = data.background;
+    modalTask.textContent = data.task;
+    modalEffect.textContent = data.effect;
+
+    // 案例图片
+    if (data.image) {
+      modalImage.src = './assets/images/' + data.image;
+      modalImageCaption.textContent = data.imageCaption || '';
+      modalImageWrap.classList.add('show');
+    } else {
+      modalImageWrap.classList.remove('show');
+    }
 
     modalTech.innerHTML = '';
     data.tags.forEach(function (tag) {

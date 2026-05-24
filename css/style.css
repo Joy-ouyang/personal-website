@@ -1086,11 +1086,47 @@ ul {
   color: var(--dark);
 }
 
-.modal-description {
+.modal-section {
+  margin-bottom: 20px;
+}
+
+.modal-section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.modal-section-text {
   font-size: 0.95rem;
   line-height: 1.8;
   color: var(--text-body);
+}
+
+.modal-image-wrap {
+  display: none;
   margin-bottom: 28px;
+}
+
+.modal-image-wrap.show {
+  display: block;
+}
+
+.modal-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.modal-image-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 .modal-tech {
