@@ -79,7 +79,7 @@ function initActiveNav() {
 function initProjectModal() {
   var projectData = [
     {
-      icon: '🧠',
+      icon: '🧬',
       title: 'AI 赋能课程开发',
       description: '一个关于应用大语言AI模型去生成大纲，加速内容写作速度，并批量运用AI翻译/配音的项目。通过组合不同常见的功能，以较低的成本/较快的速度实现了400余门课程的开发与制作。最终人力工时节约+视频制作费用，实现约200W+经费节省。',
       tags: ['AI大语言模型', 'AI语音生成', 'Prompt提示技术', '赋能业务部门运用AI技术']
